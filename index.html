@@ -672,6 +672,63 @@
     transform: none;
   }
 
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .container { padding: 0 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      height: auto;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    .hero-left::after {
+      left: 1.5rem;
+      right: 1.5rem;
+    }
+    .hero-right {
+      padding: 3rem 1.5rem 4rem;
+    }
+    .stat-row {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .stat { width: calc(50% - 0.5rem); }
+    .stat-divider { display: none; }
+    .cta-row { flex-direction: column; align-items: stretch; }
+    .skill-group-title { font-size: 11px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .exp-item,
+    .edu-item { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem 0; }
+    .exp-meta { padding-top: 0; }
+    .footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 14px; }
+    .container { padding: 0 1rem; }
+    .hero-left { padding: 2.5rem 1rem 2rem; }
+    .hero-right { padding: 2.5rem 1rem 3rem; }
+    .photo-frame { width: 100px; height: 100px; margin: 0 auto 1rem; }
+    .photo-frame::before { inset: -2px; }
+    .hero-left::after { left: 1rem; right: 1rem; }
+    .hero-name { font-size: clamp(42px, 10vw, 56px); text-align: center; }
+    .eyebrow,
+    .hero-title,
+    .hero-desc,
+    .stat-row,
+    .cta-row { text-align: center; justify-content: center; }
+    .stat { width: 100%; }
+    .cta-row { gap: 0.75rem; }
+    .btn { width: 100%; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .contact-list li { flex-wrap: wrap; }
+    .footer { align-items: center; text-align: center; }
+    .footer-copy { width: 100%; }
+  }
+
   /* ── PRINT ── */
   @media print {
     body { background: white; color: #000; }
